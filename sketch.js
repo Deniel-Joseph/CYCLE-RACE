@@ -47,6 +47,8 @@ path.velocityX = -5;
 mainCyclist  = createSprite(70,150);
 mainCyclist.addAnimation("SahilRunning",mainRacerImg1);
 mainCyclist.scale=0.07;
+mainCyclist.debug = true
+mainCyclist.setCollider("rectangle",0,0,20,20);
 
 
   
@@ -58,9 +60,9 @@ gameOver.visible = false;
 pinkCG = new Group();
 yellowCG = new Group();
 redCG = new Group();
-
-mainCyclist.debug = true
-
+pinkCG.setColliderEach("rectangle",0,0,20,20);
+yellowCG.setColliderEach("rectangle",0,0,20,20);
+redCG.setColliderEach("rectangle",0,0,20,20);
 }
 
 function draw() {
@@ -170,6 +172,7 @@ function pinkCyclists(){
         player1.velocityX = -(6 + 2*distance/150);
         player1.addAnimation("opponentPlayer1",oppPink1Img);
         player1.setLifetime=170;
+        player1.debug = true
         pinkCG.add(player1);
 }
 
@@ -179,6 +182,7 @@ function yellowCyclists(){
         player2.velocityX = -(6 + 2*distance/150);
         player2.addAnimation("opponentPlayer2",oppYellow1Img);
         player2.setLifetime=170;
+        player2.debug = true
         yellowCG.add(player2);
 }
 
@@ -188,5 +192,6 @@ function redCyclists(){
         player3.velocityX = -(6 + 2*distance/150);
         player3.addAnimation("opponentPlayer3",oppRed1Img);
         player3.setLifetime=170;
+        player3.debug = true
         redCG.add(player3);
 }
